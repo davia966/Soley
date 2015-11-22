@@ -27,18 +27,19 @@ void draw(){
     overEllipse = true;
     c = color (0);
   } else {
+    overEllipse = false;
     c = color (255, 145, 0);
   }
 }
 void mousePressed() {
- if (overEllipse){
+ if (overEllipse == true){
    locked = true;
  } else {
    locked = false;
  }
 }
 void mouseDragged() {
-  if (locked) {
+  if (overEllipse == true && locked == true) {
     x = mouseX;
     y = mouseY;
   }
